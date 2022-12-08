@@ -1,0 +1,8 @@
+﻿  MainTester.cpp
+  Set.cpp
+C:\Users\roy-sg\source\repos\TestTirgul_6_OperatorsOverloading\TestTirgul_6_OperatorsOverloading\Set.cpp(23,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\roy-sg\source\repos\TestTirgul_6_OperatorsOverloading\TestTirgul_6_OperatorsOverloading\Set.cpp(40,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\roy-sg\source\repos\TestTirgul_6_OperatorsOverloading\TestTirgul_6_OperatorsOverloading\Set.cpp(58,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\roy-sg\source\repos\TestTirgul_6_OperatorsOverloading\TestTirgul_6_OperatorsOverloading\Set.cpp(77,23): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  TestTirgul_6_OperatorsOverloading.vcxproj -> C:\Users\roy-sg\source\repos\TestTirgul_6_OperatorsOverloading\Debug\TestTirgul_6_OperatorsOverloading.exe
