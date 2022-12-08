@@ -24,6 +24,7 @@ const Set& Set::operator=(const Set& theObjectThatIWillPutInMe)
 		{
 			this->arr[i] = theObjectThatIWillPutInMe.arr[i];
 		}
+		this->currentAmountOfNumbers = theObjectThatIWillPutInMe.currentAmountOfNumbers;
 	}
 	return *this;
 }
@@ -55,11 +56,14 @@ Set operator+(const int newNumberToAdd, const Set& other)
 
 std::ostream& operator<<(std::ostream& os, const Set& objectToPrint)
 {
-	for (size_t i = 0; i < objectToPrint.currentAmountOfNumbers; i++)
+	for (size_t i = 0; i < objectToPrint.currentAmountOfNumbers - 1; i++)
 	{
 		os << objectToPrint.arr[i] << ",";
 	}
-	os << "/b";
+	if (objectToPrint.currentAmountOfNumbers != 0)
+	{
+		os << objectToPrint.arr[objectToPrint.currentAmountOfNumbers -1] << ".";
+	}
 	return os;
 }
 
@@ -76,9 +80,49 @@ Set Set::operator+(const Set& object) const
 
 	for (size_t i = 0; i < object.currentAmountOfNumbers; i++)
 	{
-		tmpReturn + object.arr[i];
+		tmpReturn = tmpReturn + object.arr[i];
 	}
 	return tmpReturn;
+}
+
+bool Set::operator>(const Set& objectoToCompare) const
+{
+	if (this->currentAmountOfNumbers > objectoToCompare.currentAmountOfNumbers)
+		return true;
+	return false;
+}
+
+bool Set::operator<(const Set& objectoToCompare) const
+{
+	if (this->currentAmountOfNumbers < objectoToCompare.currentAmountOfNumbers)
+		return true;
+	return false;
+}
+
+bool Set::operator==(const Set& objectToCompare) const
+{
+	if ((this->currentAmountOfNumbers == objectToCompare.currentAmountOfNumbers))
+	{
+		for (size_t i = 0; i < this->currentAmountOfNumbers; i++)
+		{
+			if (this->arr[i] != objectToCompare.arr[i])
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	return false;
+}
+
+bool Set::operator!=(const Set& objectToCompare) const
+{
+	return !(*this == objectToCompare);
+}
+
+int& Set::operator[](int index)
+{
+	return this->arr[index];
 }
 
 Set::Set(Set& toCopy)
@@ -90,6 +134,7 @@ Set::Set(Set&& toCopy) : maxAmountOfNumbers(toCopy.maxAmountOfNumbers)
 {
 	this->arr = toCopy.arr;
 	toCopy.arr = nullptr;
+	this->currentAmountOfNumbers = toCopy.currentAmountOfNumbers;
 }
 
 Set::~Set()
