@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	/*Set s1, s2, s3, s4;
+	Set s1, s2, s3, s4;
 
 	for (int i = 1; i <= 5; i++)
 	{
@@ -42,5 +42,5 @@ int main()
 	cout << "Element in index 3 in s1 after setting to -1 is " << s1[3] << endl;
 
 	system("pause");
-	return 0;*/
+	return 0;
 }
