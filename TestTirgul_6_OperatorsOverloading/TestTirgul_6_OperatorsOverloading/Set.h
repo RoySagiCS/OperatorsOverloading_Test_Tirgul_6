@@ -11,6 +11,12 @@ public:
 	const Set& operator+=(const int newNumberToAdd);
 	Set operator+(const Set& object) const; // add object to object
 	friend std::ostream& operator<<(std::ostream& os, const Set& objectToPrint);
+	bool operator>(const Set& objectoToCompare) const;
+	bool operator<(const Set& objectoToCompare) const;
+	bool operator==(const Set& objectToCompare) const;
+	bool operator!=(const Set& objectToCompare) const;
+	int& operator[](int index);
+
 	Set(Set& toCopy);
 	Set(Set&& toCopy);
 	~Set();
